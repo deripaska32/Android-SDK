@@ -1,0 +1,300 @@
+# Android-SDK
+
+Android IDE and SDK
+
+How to Install and Get Started
+
+1.  Introduction
+Android Robot
+Android is an Operating System for mobile devices developed by Google, which is built upon Linux kernel. Android competes with Apple's iOS (for iPhone/iPad), RIM's Blackberry, Microsoft's Windows Phone, Symbian OS, and many other proprietary mobile OSes.
+
+The latest Android supports Phone/Tablet, TV, Wear (watch and glass), Automobile and Internet of things.
+
+Android Platform
+Android is based on Linux with a set of native core C/C++ libraries. Android applications are written in Java. However, they run on Android's own Java Virtual Machine, called Dalvik Virtual Machine (DVM) (instead of JDK's JVM) which is optimized to operate on the small and mobile devices.
+
+Android Stack
+In May 2017, Google announced support for Android app development in the Kotlin programming language, supported in Android Studio 3.0. Kotlin will not be discussed in this article.
+
+The mother site for Android is https://www.android.com. For programmers and developers, visit https://developer.android.com to download the SDK, Android Training, API Guides and API documentation.
+
+2.  Installing "Android Studio IDE" and "Android SDK"
+Installing Android software is probably the most challenging part of this project - for the unlucky ones. It takes times - from 30 minutes to n hours to forever - depending on your luck (in fact, your IT knowledge) and your PC. You probably need a fairly decent PC (with 8GB RAM) and 10GB of free disk space to run the Android emulator!!! Running on actual Android devices (phone, tablet) requires much lesser resources.
+
+Step 0: Pre-Installation Check List
+Before installing Android SDK, you need to install Java Development Kit (JDK). Read "How to install JDK". Ensure that your JDK is at or above 1.8. You can check your JDK version with command "javac -version".
+Uninstall older version(s) of "Android Studio" and "Android SDK", if any.
+The installation and many operations take a LONG time to complete. Do NOT stare at your screen or at the ceiling. Browse through the "Android Developers" @ https://developer.android.com. For developers, check out the "Developer Guides".
+We need to install:
+Android Studio, which is an Integrated Development Environment (IDE) based on IntelliJ (a popular Java IDE); and
+Android Software Development Kit (SDK) for developing Android apps.
+Step 1: Install "Android Studio IDE"
+Reference: "Install Android Studio" @ https://developer.android.com/studio/install.
+
+(For Windows)
+Check that environment variable JAVA_HOME is set to the JDK installation directory via command "set JAVA_HOME". Otherwise, Follow the steps HERE.
+Check the system requirements for Android Studio/SDK @ https://developer.android.com/studio#Requirements e.g., For Windows 10, recommended 8GB of RAM, 4GB of disk space, and 1280x800 minimum screen resolution.
+Goto "Android Studio" @ https://developer.android.com/studio ⇒ Click "Download Android Studio 3.3.x for Windows 64-bit (948MB)", e.g., android-studio-ide-182.xxxxxxx-windows.exe.
+Run the downloaded installer ⇒ You may watch a short video @ https://developer.android.com/studio/install ⇒ In "Choose Components", select "Android Studio" and "Android Virtual Device" ⇒ In "Android Studio Installation Location", accept the default "C:\Program Files\Android\Android Studio" ⇒ Follow the on-screen instruction and accept the defaults to complete the installation. You need about 3-4GB of free disk space! Take note (and take photo) on the installation locations of "Android Studio" (by default @ "C:\Program Files\Android\Android Studio") and the "Android SDK" (by default @ c:\Users\username\AppData\Local\Android\Sdk).
+(For Mac OS X)
+Check the system requirements @ https://developer.android.com/studio#Requirements e.g., For Mac OS X 10.10 to 10.13, recommended 8GB of RAM, 4GB of disk space, and 1280x800 minimum screen resolution.
+Goto "Android Developer" @ https://developer.android.com/index.html ⇒ Select "Get Android Studio" ⇒ "Download Android Studio 3.3.x for Mac (997MB)", e.g., android-studio-ide-182.xxxxxxx-mac.dmg.
+Launch the downloaded ".dmg" installation file ⇒ You may watch a short video @ https://developer.android.com/studio/install.
+Drag and drop Android Studio into the "Applications" folder. The installation will continue to Step 2 below.
+Note: If you see a warning that says the package is damaged and should be moved to the trash, go to System Preferences ⇒ Security & Privacy ⇒ under Allow applications downloaded from ⇒ select Anywhere. Then run again.
+The "Android SDK" will be installed in "~/Library/Android/sdk" by default, where ~ denotes your home directory.
+Step 2: Installing Android SDK
+Notes: Adding too many SDK packages, especially the so-called system images for emulating different device (e.g., various phone/tablet), will take an extremely LONG time, especially if everyone is downloading and jamming up the network. The system images also take up a lot of disk space - a few GBytes per API level!!! For our toy project, we only need a small set of SDK packages.
+
+[TODO] Check if it is possible to copy the SDK instead of downloading the 1GB during installation?
+
+(For Windows)
+Launch Android Studio ⇒ It will run the "setup" wizard for the first launch ⇒ do not import previous settings ⇒ In "Welcome", choose "next" ⇒ In "Install Type", choose "Standard" (default) ⇒ In "Select UI Theme", select "IntelliJ" (default) ⇒ Take note of the SDK folder, by default @ c:\Users\username\AppData\Local\Android\Sdk ⇒ Finish.
+This step will download another 1GB of SDK package and take times to complete.
+Note: In Windows, "AppData" is a hidden directory. You need to choose "View" ⇒ Check "Show Hidden Items" to see this directory.
+(Optional) You can check the SDK packages installed by selecting "Configure" (at the bottom of Android Studio) ⇒ "SDK Manager" ⇒ "Android SDK" (sidebar):
+Under "SDK Platforms" tab:
+Android 8.1 (Oreo) (API Level 27)
+Under "SDK Tools" tab:
+Android SDK Build Tools 29-rc1
+Android Emulator (27.1.12)
+Android SDK Platform-Tools (28.0.2)
+Android SDK Tools (26.1.1)
+Intel x86 Emulator Accelerator (HAXM installer) (7.3.2)
+Support Repository (ConstraintLayout for Android, Solver for ConstraintLayout, Android Support Repository, Google Repository)
+(For Mac OS X)
+Launch Android Studio ⇒ It will run the "setup" wizard for the first launch ⇒ do not import previous settings ⇒ In "Welcome", choose "next" ⇒ In "Install Type", choose "Standard" (default) ⇒ Take note of the SDK folder, by default @ "/Users/username/Library/Android/sdk" (aka "~/Library/Android/sdk") ⇒ Finish.
+This step will download another 1GB of SDK package and take quite sometimes to complete.
+(Optional) You can check the SDK packages installed by selecting "Configure" (at the bottom of Android Studio) ⇒ "SDK Manager" ⇒ "Android SDK" (sidebar):
+Under "SDK Platforms" tab:
+Android 8.1 (Oreo) (API Level 27)
+Under "SDK Tools" tab:
+Android SDK Build Tools 29-rc1
+Android Emulator (27.1.12)
+Android SDK Platform-Tools (28.0.2)
+Android SDK Tools (26.1.1)
+Intel x86 Emulator Accelerator (HAXM installer) (7.3.2)
+Android Support Repository (ConstraintLayout for Android, Solver for ConstraintLayout, Android Support Repository, Google Repository)
+3.  Write your First Android App
+Android apps are written in Java, and use XML extensively. I shall assume that you have basic knowledge of Java and XML.
+
+Take note that Android emulator is slow - VERY VERY VERY SLOW!!! Be Patient!!!
+
+3.1  Hello-World
+Step 0: Read
+Goto "Android Guides" @ https://developer.android.com/guide/index.html. Read "Building your first app".
+
+Step 1: Create a New Android Project
+Launch Android Studio.
+Choose "Start a new Android Studio Project".
+In "Choose your project", select "Phone and Tablet" tab ⇒ "Empty Activity" ⇒ Next.
+In "Configure your project" ⇒ Set "Name" to "Hello Android" (this will be the "Title" in your phone's app menu) ⇒ The "Package name" and "Save Location" will be updated automatically ⇒ In "Language", select "Java" ⇒ Leave the "Minimum API Level" and the rest to default ⇒ Finish.
+Be patient! It could take a few minutes to set up your first app. Watch the "progress bar" at the bottom status bar and Zzzzzzzzz...... Once the progress bar indicates completion, a hello-world app is created by default.
+Step 2: Setup Emulator (aka Android Virtual Device (AVD))
+To run your Android app under the emulator, you need to first create an Android Virtual Devices (AVD). An AVD models a specific device (e.g., your jPone or Taimi). You can create AVDs to emulate different android devices (e.g., phone/tablet, android version, screen size, and etc.).
+
+In Android studio, select "Tools" ⇒ Android ⇒ AVD Manager. See "Common Errors" below if you cannot find "AVD manager".
+Click "Create Virtual Device".
+In "Choose a device definition" ⇒ In "Category", choose "Phone" ⇒ In "Name", choose "2.7 QVGA" (the smallest device available - you can try a bigger device later) ⇒ Next.
+In "System Image: Recommended" ⇒ Select the version with the highest API level ⇒ Click "Download" ⇒ Next.
+In "AVD Name", enter "2.7 QVGA API 27" (default) ⇒ Finish.
+If you see "VT-x is disabled in BIOS": Check your BIOS setting to ensure that "Virtualization Technology" is enabled. Shutdown and re-boot your PC to enter the BIOS setup. This is machine dependent. Google "Your-PC-brand-and-model enter BIOS setup". For example, for my HP computer ⇒ Boot ⇒ "ESC" to enter BIOS setup ⇒ Advanced ⇒ System Options ⇒ Check "Virtualization Technology (VTx)" ⇒ Save ⇒ Exit.
+Step 3: Run the Android App on Emulator
+Select the "Run" menu ⇒ "Run app" ⇒ Under "Available Virtual Devices", select "2.7 QVGA API 27" ⇒ OK.
+You MAY BE prompted to install Intel HAXM (Hardware Accelerated Execution Manager). Follow the instruction to install HAXM.
+Be patient! It may take a few MINUTES to fire up the app on the emulator. You first see a Google logo ⇒ then "Android" ⇒ then the "wallpaper" ⇒ then the "Hello, world!" message.
+If you have problem running on the emulator, I suggest you try to run on an actual Android device (phone/pad) if you have one. Goto next step.
+DO NOT CLOSE THE EMULATOR, as it really takes a long time to start. You could always re-run the app (or run a new app) on the same emulator. Try re-run the app by selecting "Run" menu ⇒ "Run app".
+Common Errors:
+
+If everything fails, select "File" menu ⇒ "Invalidate Caches / Restart..." ⇒ and wait ...
+Cannot find "AVD manager" in the "Tool" menu: You may not have enough packages needed for the project. You should have a window with Gradle alert with a link which you can click and you will see a window with a prompt to download missing packages. When all stuff downloaded the "ADV manager" should be enabled.
+If you get an error message "Fail to find target with hash string 'android-26'". Either click the link "Install missing platform(s) and sync project" to install API-26 (another GB download!); or Under "Gradle Scripts" ⇒ Open "build.gradle (Module: app)" ⇒ Change "compileSdkVersion" and "targetSdkVersion" from 26 to 27 (we have installed API-27) and "com.android.support:appcompat-v7:26.x.x" to "27.0.0".
+If you get an error message "Re-download dependencies and sync project (requires network)", click the link to download. If the message appears again:
+(Windows) Goto "C:\Users\username\.gradle\wrapper\dists" and delete "gradle-x.x-all". Take note the ".gradle" is a hidden directory and you need to enable viewing of hidden directory.
+(Macs) Goto "~\.gradle\wrapper\dists" and delete "gradle-x.x-all". Take note the ".gradle" is a hidden directory and you need to enable viewing of hidden directory.
+Restart Android Studio.
+This error is due to poor network condition, resulted in corrupted download.
+If you encountered error "Emulator: ERROR: x86 emulation currently requires hardware acceleration", Read "https://stackoverflow.com/questions/29136173/emulator-error-x86-emulation-currently-requires-hardware-acceleration", (6), and (7).
+If you encountered error "HAX is not working..." ⇒ Open "SDK Manager" ⇒ SDK Tools ⇒ Check if "Intel x86 Emulator Accelerator (HAXM Installer)" is installed ⇒ Goto SDK Location (by default, "C:\Users\your-username\AppData\Local\Android\Sdk\extras\intel\Hardware_Accelerated_Execution_Manager" for Windows or "~/Library/Android/sdk/extras/intel/Hardware_Accelerated_Execution_Manager" for Mac OS X) ⇒ run "intelhaxm-android.exe" to install HAXM ⇒ Be patient! The installer may take a while to launch ⇒ Follow the screen instructions to complete the setup.
+Take note that: (a) In Windows, the "AppData" directory is hidden. You need to unhide via "Control Panel" ⇒ "Folder Options" (or "File Explorer Options" in Windows 10) ⇒ Check "Show hidden files, folders, and drives". (b) In Mac OS X, the "Library" folder is hidden. You can unhide via "Finder" ⇒ Go ⇒ Home ⇒ Settings ⇒ Show View Option.
+If the problem persists, remove and then re-install.
+If you encountered error "Intel virtualization technology (VT-x) is not turned on" ⇒ Check your BIOS setting to ensure that "Intel virtualization technology" is enabled. Shutdown and re-boot your PC to enter the BIOS setup. This is machine dependent. Google "Your-PC-brand-and-model enter BIOS setup".
+If "Intel virtualization technology" is already enabled, this error is probably caused by your antivirus software. Disable your antivirus for this session and rerun.
+See http://stackoverflow.com/questions/21635504/error-during-installing-haxm-vt-x-not-working.
+If you have problem creating AVD via "AVD Manager" (On Mac OS X having error "Studio quit unexpectedly"), open the AVD manager via command line as follows:
+// For Mac OS X
+cd ~/Library/Android/sdk/tools
+./android avd
+ 
+// For Windows
+cd C:\Users\your-username\AppData\Local\Android\sdk\tools
+android avd
+Step 4: Run the Android App on Real Devices
+Reference: "Running Your App", "Run on Real Device" @ https://developer.android.com/training/basics/firstapp/running-app.html#RealDevice.
+
+To run the Android app on a REAL device (Android Phone or Tablet):
+
+Connect the real device to your computer. Make sure that you have the "USB Driver" for your device installed on your computer. If not, goto https://developer.android.com/studio/run/oem-usb.html to Install OEM USB Drivers. If you device is not certified there, good luck! It took me many hours to find a compatible driver for my cheap un-brand Tablet.
+Enable "USB Debugging" mode on your real device:
+(On Android 4.2/5.0 and newer) Need to enable "Developer options" via "Settings" ⇒ About Phone ⇒ Scroll to the bottom and tap "Build number" seven (7) times until "Developer Mode" is displayed. Return to the previous screen to find "Developer options" ⇒ Open "Developer options" ⇒ Enable "USB debugging".
+(On Android 4.0) From "Settings" ⇒ "Developer options" ⇒ Check "USB Debugging".
+(On Android 3.2 and older) From "Settings" ⇒ "Applications" ⇒ "Development" ⇒ Check "USB Debugging".
+This allows Android SDK to transfer data between your computer and your device. Also enable "Unknown source" from "Applications". This allows applications from unknown sources to be installed on the device.
+You shall see the message "USB Debugging Connected" when you plugs the USB cable into your computer.
+From Android Studio, select "Run" menu ⇒ "Run app" ⇒ Your device shall be listed under "Choose a running device" ⇒ Select the device ⇒ OK.
+Deleting a Project
+To delete a project, select "File" ⇒ "Close Project" ⇒ On the "Recent Projects" ⇒ Hover over the project ⇒ Press "Delete" key on the project to remove the project from Android Studio ⇒ You can then delete the project directory from the file system.
+
+3.2  Hello-world "by Coding"
+There are two ways to create User Interface (UI) on Android: (1) Write Java codes; (2) Layout via XML descriptions and let the system generates the Java code for you.
+
+Let's begin with writing Java codes (because I suppose to teach you programming). We shall continue from the "Hello Android" project created earlier.
+
+MainActivity.java
+Expand the "app" node. Expand the "java" node. Expand the "com.example.helloandroid" package node. Open the "MainActivity.java" (which actually has already been opened). REPLACE the onCreate() method as follows and add the import statement. Do not touch the rest of the codes.
+
+package ......;
+ 
+import ......;
+import android.widget.TextView;   // Add this line
+ 
+public class MainActivity extends ...... {
+
+    // REPLACE the ENTIRE onCreate() method as follows:
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        TextView textView = new TextView(this);   // Construct a TextView UI component
+        textView.setText("Hello, from my Java code!"); // Set the text message for TextView
+        setContentView(textView);  // this Activity sets its content to the TextView
+    }
+    
+    // Do not touch the rest of the codes, if any
+    ......
+    ......
+}
+Run the application ("Run" ⇒ "Run app"). You shall see the message "Hello, from my Java code!" displayed.
+
+Dissecting the "MainActivity.java" - Application, Activity & View
+An Android application could have one or more Activity.
+
+An Activity, which usually has a screen, is a single, focused thing that the user can interact with the application (hence called activity). The MainActivity extends the android.app.Activity class (or android.support.v7.app.AppCompatActivity in the later version), and overrides the onCreate() method. The onCreate() is a call-back method, which is called back by the Android system when the activity is launched.
+
+A View is a UI component (or widget, or control). We construct a TextView (which is a subclass View for showing a text message), and set its text. We then set the content-view of the MainActivity screen to this TextView.
+
+Android Application Descriptor File - "AndroidManifest.xml"
+Each Android application has a manifest file named AndroidManifest.xml under "app" ⇒ "manifests". It describes the Android app.
+
+For example, our "Hello Android" application, with an activity called MainActivity, has the following manifest (generated automatically by the Android Studio when the project was built):
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.helloandroid" >
+ 
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Hello Android"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
+The <manifest> element specifies the package name.
+The <manifest> contains one <application> element.
+The <application> element specifies the icon, label (the app's title) and theme of this application. It contains one ore more <activity> elements.
+This application has one activity. The <activity> element declares its program name ("MainActivity" in current package "."). It may contain <intent-filter>.
+The <intent-filter> declares that this activity is the entry point (android.intent.action.MAIN) of the application. This activity is to be added to the application launcher (android.intent.category.LAUNCHER).
+3.3  Hello-World using "XML Layout"
+Instead of writing Java codes to create the user interface (UI) (as in the above example using a TextView component). It is more flexible and therefore recommended to layout your UI components via a descriptive XML layout file. In this way, you don't need to hardcode the views, and you can easily modify the look and feel of the application by editing the XML markups. The Java codes can therefore focus on the business logic.
+
+Let's rewrite our hello-world to use XML layout.
+
+Step 1: Create a New Android Application
+CLOSE the previous project, via "File" ⇒ "Close Project" (Always CLOSE the previous project before starting a new project).
+
+"Start a new Android Studio project" ⇒ "Phone and Tablet" ⇒ "Empty Activity" ⇒ Set "Name" to "Hello Android XML".
+
+Step 2: Define the Layout in XML - "res\layout\activity_main.xml"
+Expand the "app", "res (resource)", "layout" node. Open the "activity_main.xml" (which is actually already opened). Android Studio provides two views for this XML file: "Design (or Graphical)" and "Text (or XML)" - selectable at the bottom of the panel.
+
+Select the "Text" mode and study the codes:
+
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.helloandroidxml.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.design.widget.CoordinatorLayout>
+It declares a TextView (text field) that holds a text string "Hello World!". The TextView component has width and height big enough to hold its content ("wrap_content").
+
+Step 3: Defining String References and Values - "res\values\string.xml"
+Instead of hardcoding the Hello-World string directly inside the TextView (as in the above XML file), we shall use a string reference (similar to a variable) for better flexibility.
+
+Expand res/values node. Open strings.xml, and ADD the line in red:
+
+<resources>
+    <string name="app_name">Hello Android XML</string>
+    <string name="hello">Hello world from XML!</string>
+</resources>
+This "string.xml" defines 2 references/values:
+
+A string reference (variable) "app_name" contains the application's name, that you entered when you created the project.
+A string reference (variable) "hello" contains the value of "Hello world from XML!".
+Now, modify the "activity_main.xml" to use the string reference "hello", in the format "@string/hello", as follows:
+
+    ......
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello" 
+        ...... />
+    ......
+Step 4: The Activity - "MainActivity.java"
+Next, check the "MainActitivy.java" (under app/java/com.example.helloandroidxml), as follows:
+
+package ......;
+ 
+import ......;
+ 
+public class MainActivity extends ...... {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+           // Use "activity_main.xml" to layout the screen.
+    }
+}
+The "MainActivity" sets its content-view to "R.layout.activity_main", which is mapped to the XML layout file "res\layout\activity_main.xml" that we have modified earlier.
+
+Step 5: Run the App
+Run the application. You shall see the new string "Hello, from XML!" displayed.
+
+REFERENCES & RESOURCES
+
+Android Developer @ http://developer.android.com/index.html.
+"Android Guides" @ http://developer.android.com/guide/index.html.
+Android "API Reference" @ https://developer.android.com/reference/packages.html.
+Latest version tested: Android 8 (Oreo), Android Studio 3.3.2
+Last modified: March, 2019
+
+Feedback, comments, corrections, and errata can be sent to Chua Hock-Chuan (ehchua@ntu.edu.sg)   |   HOME
